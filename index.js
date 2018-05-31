@@ -6,13 +6,13 @@ function setup() {
 
 function draw() {
   background(51);
-//   grid();
-//   snake();
+  grid();
+  snake();
 }
 
 function snake() {
   stroke(255);
-  rect(location[0][0],location[1][0],location[0][0]+40,location[1][0]+40);
+  rect(0,0,40,40);
 }
 
 function grid() {
