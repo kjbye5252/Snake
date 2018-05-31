@@ -13,6 +13,6 @@ function grid() {
   for(i=0;i<10;i++){
     stroke(255);
     strokeWeight(5);
-    line(0,1*40,400,1*40);
+    line(0,-40,400,-40);
   }
 }
