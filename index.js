@@ -11,6 +11,8 @@ function draw() {
 
 function grid() {
   for(i=0;i<10;i++){
-    line(0,i*40,400,i*40);
+    stroke(255);
+    strokeWeight(5);
+    line(0,1*40,400,1*40);
   }
 }
