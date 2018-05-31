@@ -10,11 +10,10 @@ function setup() {
 function draw() {
   background(51);
   grid();
-  snakeX++;
-  snake();
+  snake(direction);
 }
 
-function snake() {
+function snake(direct) {
   stroke(255);
   if(keyCode === RIGHT_ARROW) {
     direction = right;
@@ -25,15 +24,15 @@ function snake() {
   } else if(keyCode === DOWN_ARROW){
     direction = down;        
   }
-//   if(direction === right) {
-//     snakeX++;
-//   } else if(direction === left) {
-//     snakeX--;
-//   } else if(direction === up) {
-//     snakeY++;
-//   } else {
-//     snakeY--;
-//   }
+  if(direct === right) {
+    snakeX++;
+  } else if(direct === left) {
+    snakeX--;
+  } else if(direct === up) {
+    snakeY++;
+  } else {
+    snakeY--;
+  }
   rect(snakeX,snakeY,38,38);
 }
 
