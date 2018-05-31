@@ -15,25 +15,25 @@ function draw() {
 
 function snake() {
   stroke(255);
-//   if(keyCode === RIGHT_ARROW) {
-//     direction = right;
-//   } else if(keyCode === LEFT_ARROW){
-//     direction = left;        
-//   } else if(keyCode === UP_ARROW){
-//     direction = up;        
-//   } else if(keyCode === DOWN_ARROW){
-//     direction = down;        
-//   }
-//   if(direction === right) {
-//     snakeX++;
-//   } else if(direction === left) {
-//     snakeX--;
-//   } else if(direction === up) {
-//     snakeY++;
-//   } else {
-//     snakeY--;
-//   }
-  rect(snakeX*40,snakeY*40,(snakeX*40)+40,(snakeY*40)+40);
+  if(keyCode === RIGHT_ARROW) {
+    direction = right;
+  } else if(keyCode === LEFT_ARROW){
+    direction = left;        
+  } else if(keyCode === UP_ARROW){
+    direction = up;        
+  } else if(keyCode === DOWN_ARROW){
+    direction = down;        
+  }
+  if(direction === right) {
+    snakeX++;
+  } else if(direction === left) {
+    snakeX--;
+  } else if(direction === up) {
+    snakeY++;
+  } else {
+    snakeY--;
+  }
+  rect((snakeX*40)+2,(snakeY*40)+2,38,38);
 }
 
 function grid() {
