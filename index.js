@@ -29,11 +29,11 @@ function snake(direct) {
   } else if(direct === 2) {
     snakeX--;
   } else if(direct === 3) {
-    snakeY++;
-  } else {
     snakeY--;
+  } else {
+    snakeY++;
   }
-  rect(snakeX,snakeY,38,38);
+  rect((snakeX*40)+2,(snakeY*40)+2,38,38);
 }
 
 function grid() {
