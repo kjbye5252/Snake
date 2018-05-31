@@ -33,7 +33,7 @@ function snake() {
 //   } else {
 //     snakeY--;
 //   }
-  rect((snakeX*40)+1,(snakeY*40)+1,38,38);
+  rect(snakeX,snakeY,38,38);
 }
 
 function grid() {
