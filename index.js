@@ -24,8 +24,8 @@ function snake() {
 //   } else if(keyCode === DOWN_ARROW){
 //     direction = down;        
 //   }
-  if(direction === right) {
-    snakeX+=0.02;
+  if(direction == right) {
+    snakeX+=0;
   }
 //   } else if(direction === left) {
 //     snakeX--;
