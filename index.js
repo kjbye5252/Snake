@@ -1,4 +1,5 @@
-// var location = [[0],[0]];
+var snakeX = 0;
+var snakeY = 0;
 var direction = right;
 
 function setup() {
@@ -13,12 +14,25 @@ function draw() {
 
 function snake() {
   stroke(255);
-  if(keyCode === RIGHT_ARROW && direction != right) {
+  if(keyCode === RIGHT_ARROW) {
     direction = right;
-  } else if(keyCode === LEFT_ARROW && direction != left){
+  } else if(keyCode === LEFT_ARROW){
     direction = left;        
+  } else if(keyCode === UP_ARROW){
+    direction = up;        
+  } else if(keyCode === DOWN_ARROW){
+    direction = down;        
   }
-  rect(1,1,35,35);
+  if(direction === right) {
+     snakeX++;
+  } else if(direction === left) {
+    snakeX--;
+  } else if(direction === up) {
+    snakeY++;
+  } else {
+    snakeY--;
+  }
+  rect(snakeX,snakeY,snakeX+40,snakeY+40);
 }
 
 function grid() {
