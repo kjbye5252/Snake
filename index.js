@@ -25,7 +25,7 @@ function snake() {
 //     direction = down;        
 //   }
   if(direction === right) {
-    snakeX++;
+    snakeX+=0.02;
   }
 //   } else if(direction === left) {
 //     snakeX--;
