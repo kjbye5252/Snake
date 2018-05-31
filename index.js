@@ -12,7 +12,7 @@ function draw() {
 
 function snake() {
   stroke(255);
-  rect(0,0,40,40);
+  rect(3,3,37,37);
 }
 
 function grid() {
