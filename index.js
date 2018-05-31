@@ -24,8 +24,9 @@ function snake() {
 //   } else if(keyCode === DOWN_ARROW){
 //     direction = down;        
 //   }
-//   if(direction === right) {
-//     snakeX++;
+  if(direction === right) {
+    snakeX++;
+  }
 //   } else if(direction === left) {
 //     snakeX--;
 //   } else if(direction === up) {
@@ -33,7 +34,7 @@ function snake() {
 //   } else {
 //     snakeY--;
 //   }
-  rect((snakeX*40)+2,(snakeY*40)+2,38,38);
+  rect((snakeX*40)+1,(snakeY*40)+1,38,38);
 }
 
 function grid() {
