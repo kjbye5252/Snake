@@ -1,4 +1,4 @@
-var location = [[0],[0]];
+// var location = [[0],[0]];
 
 function setup() {
   createCanvas(400,400);
@@ -6,7 +6,7 @@ function setup() {
 
 function draw() {
   background(51);
-  grid();
+//   grid();
 //   snake();
 }
 
