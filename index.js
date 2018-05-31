@@ -1,4 +1,5 @@
 // var location = [[0],[0]];
+var direction = right;
 
 function setup() {
   createCanvas(400,400);
@@ -12,7 +13,12 @@ function draw() {
 
 function snake() {
   stroke(255);
-  rect(3,3,37,37);
+  if(keyCode === RIGHT_ARROW && direction != right) {
+    direction = right;
+  } else if(keyCode === LEFT_ARROW && direction != left){
+    direction = left;        
+  }
+  rect(1,1,35,35);
 }
 
 function grid() {
