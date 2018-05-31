@@ -1,6 +1,6 @@
 var snakeX = 1;
 var snakeY = 1;
-var direction = right;
+var direction = 1;
 
 function setup() {
   createCanvas(400,400);
@@ -16,19 +16,19 @@ function draw() {
 function snake(direct) {
   stroke(255);
   if(keyCode === RIGHT_ARROW) {
-    direction = right;
+    direction = 1;
   } else if(keyCode === LEFT_ARROW){
-    direction = left;        
+    direction = 2;        
   } else if(keyCode === UP_ARROW){
-    direction = up;        
+    direction = 3;        
   } else if(keyCode === DOWN_ARROW){
-    direction = down;        
+    direction = 4;        
   }
-  if(direct === right) {
+  if(direct === 1) {
     snakeX++;
-  } else if(direct === left) {
+  } else if(direct === 2) {
     snakeX--;
-  } else if(direct === up) {
+  } else if(direct === 3) {
     snakeY++;
   } else {
     snakeY--;
