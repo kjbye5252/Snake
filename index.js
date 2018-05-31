@@ -12,7 +12,5 @@ function draw() {
 }
 
 function grid() {
-  for(i=0;i<10;i++){
-    line(0,40,400,40);
-  }
+  line(0,40,400,40);
 }
