@@ -1,7 +1,7 @@
 var snakeX = [0];
 var snakeY = [0];
-var foodX = Math.round(Math.random()*19);
-var foodY = Math.round(Math.random()*19);
+var foodX = Math.round(Math.random()*39);
+var foodY = Math.round(Math.random()*39);
 var direction = 1;
 
 function setup() {
