@@ -80,5 +80,5 @@ function food(){
   }
   stroke(255,0,0);
   fill(255,0,0);
-  rect(foodX*30,foodY*30,29,29);
+  rect((foodX*30)+1,(foodY*30)+1,29,29);
 }
