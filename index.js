@@ -1,7 +1,7 @@
 var snakeX = [1,0];
 var snakeY = [0,0];
-var foodX = random(1,19);
-var foodY = random(1,19);
+var foodX = random(1,5);
+var foodY = random(1,5);
 var direction = 1;
 
 function setup() {
@@ -77,5 +77,6 @@ function food(){
     foodX = random(0,19);
     foodY = random(0,19);
   }
+  stroke(255,0,0);
   rect(foodX*30,foodY*30,29,29);
 }
