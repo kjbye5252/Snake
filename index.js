@@ -1,7 +1,7 @@
 var snakeX = [1,0];
 var snakeY = [0,0];
-var foodX = 10;
-var foodY = 10;
+var foodX = random(1,19);
+var foodY = random(1,19);
 var direction = 1;
 
 function setup() {
@@ -74,10 +74,8 @@ function tail(){
 
 function food(){
   if(snakeX == foodX && snakeY == foodY){
-    snakeX.pop();
-    snakeY.pop();
-    foodX = random(30);
-    foodY = random(30);
+    foodX = random(0,19);
+    foodY = random(0,19);
   }
   rect(foodX*30,foodY*30,29,29);
 }
