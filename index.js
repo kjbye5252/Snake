@@ -25,13 +25,13 @@ function snake(direct) {
     direction = 4;        
   }
   if(direct === 1) {
-    snakeX[i]++
+    snakeX[0]++
   } else if(direct === 2) {
-    snakeX[i]--
+    snakeX[0]--
   } else if(direct === 3) {
-    snakeY[i]--
+    snakeY[0]--
   } else {
-    snakeY[i]++
+    snakeY[0]++
   }
   wrap();
   tail();
