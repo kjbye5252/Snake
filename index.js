@@ -38,10 +38,10 @@ function snake(direct) {
     snakeY[0]++
   }
   wrap();
-  tail();
   for(i = 0; i < snakeX.length; i++){
     rect((snakeX[i]*30)+1,(snakeY[i]*30)+1,28,28);
   }
+  tail();
 }
 
 function grid() {
