@@ -1,5 +1,5 @@
-var snakeX = [0];
-var snakeY = [0];
+var snakeX = [Math.round(Math.random()*39)];
+var snakeY = [Math.round(Math.random()*39)];
 var foodX = Math.round(Math.random()*39);
 var foodY = Math.round(Math.random()*39);
 var direction = 1;
@@ -39,8 +39,7 @@ function snake(direct) {
   }
   for(i = 0; i < snakeX.length; i++){
     if(snakeX[0] == snakeX[i+1] && snakeY[0] == snakeY[i+1]){
-      snakeX = [0];
-      snakeY = [0];
+      reset();
     }
   }
   wrap();
@@ -89,4 +88,10 @@ function food(){
   stroke(255,0,0);
   fill(255,0,0);
   rect((foodX*15)+1,(foodY*15)+1,13,13);
+}
+
+function reset(){
+  text("GAME OVER!",300,300);
+  snakeX = [Math.round(Math.random()*39)];
+  snakeY = [Math.round(Math.random()*39)];
 }
