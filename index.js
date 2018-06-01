@@ -1,5 +1,5 @@
-var snakeX = [0];
-var snakeY = [0];
+var snakeX = [0,0,0];
+var snakeY = [0,0,0];
 var foodX = Math.round(Math.random()*19);
 var foodY = Math.round(Math.random()*19);
 var direction = 1;
@@ -68,8 +68,8 @@ function wrap(){
 
 function tail(){
   for(i = 0;i < (snakeX.length)-1;i++){
-    snakeX[i+1] = snakeX[i];
-    snakeY[i+1] = snakeY[i];
+    snakeX[snakeX.length-1] = snakeX[snakeX.length-(i+1)];
+    snakeY[snakeY.length-1] = snakeY[snakeY.length-(i+1)];
   }
 }
 
