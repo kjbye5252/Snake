@@ -1,10 +1,10 @@
-var snakeX = 1;
-var snakeY = 1;
+var snakeX = 0;
+var snakeY = 0;
 var direction = 1;
 
 function setup() {
-  createCanvas(400,400);
-  frameRate(10);
+  createCanvas(600,600);
+  frameRate(5);
 }
 
 function draw() {
@@ -33,15 +33,15 @@ function snake(direct) {
   } else {
     snakeY++;
   }
-  rect((snakeX*40)+2,(snakeY*40)+2,38,38);
+  rect((snakeX*30)+2,(snakeY*30)+2,28,28);
 }
 
 function grid() {
   stroke(0,255,0);
-  for(var i=0;i<10;i++) {
-    line(0,i*40,400,i*40);
+  for(var i=0;i<20;i++) {
+    line(0,i*30,600,i*30);
   }
-  for(var i=0;i<10;i++) {
-    line(i*40,0,i*40,400);
+  for(var i=0;i<20;i++) {
+    line(i*30,0,i*30,600);
   }
 }
