@@ -75,8 +75,8 @@ function tail(){
 
 function food(){
   if(snakeX[0] == foodX && snakeY[0] == foodY){
-    snakeX.pop(snakeX[snakeX.length-1]);
-    snakeY.pop(snakeY[snakeY.length-1]);
+    snakeX.push(snakeX[snakeX.length-1]);
+    snakeY.push(snakeY[snakeY.length-1]);
     foodX = Math.round(Math.random()*19);
     foodY = Math.round(Math.random()*19);
   }
