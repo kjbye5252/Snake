@@ -1,5 +1,5 @@
-var snakeX = [0,0,0];
-var snakeY = [0,0,0];
+var snakeX = [0];
+var snakeY = [0];
 var foodX = Math.round(Math.random()*19);
 var foodY = Math.round(Math.random()*19);
 var direction = 1;
