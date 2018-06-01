@@ -1,5 +1,5 @@
-var snakeX = 0;
-var snakeY = 0;
+var snakeX = [0];
+var snakeY = [0];
 var direction = 1;
 
 function setup() {
@@ -25,16 +25,18 @@ function snake(direct) {
     direction = 4;        
   }
   if(direct === 1) {
-    snakeX++;
+    snakeX[0]++;
   } else if(direct === 2) {
-    snakeX--;
+    snakeX[0]--;
   } else if(direct === 3) {
-    snakeY--;
+    snakeY[0]--;
   } else {
-    snakeY++;
+    snakeY[0]++;
   }
   wrap();
-  rect((snakeX*30)+1,(snakeY*30)+1,28,28);
+  for(var i = 0; i < snakeX.length; i++){
+      rect((snakeX[i]*30)+1,(snakeY[i]*30)+1,28,28);
+  }
 }
 
 function grid() {
@@ -48,13 +50,13 @@ function grid() {
 }
 
 function wrap(){
-  if(snakeX > 19){
-    snakeX = 0;
-  } else if(snakeX < 0){
-    snakeX = 19;
-  } else if(snakeY > 19){
-    snakeY = 0;
-  } else if(snakeY < 0){
-    snakeY = 19;
+  if(snakeX[0] > 19){
+    snakeX[0] = 0;
+  } else if(snakeX[0] < 0){
+    snakeX[0] = 19;
+  } else if(snakeY[0] > 19){
+    snakeY[0] = 0;
+  } else if(snakeY[0] < 0){
+    snakeY[0] = 19;
   }
 }
