@@ -33,7 +33,8 @@ function snake(direct) {
   } else {
     snakeY++;
   }
-  rect((snakeX*30)+2,(snakeY*30)+2,28,28);
+  wrap();
+  rect((snakeX*30)+1,(snakeY*30)+1,28,28);
 }
 
 function grid() {
@@ -43,5 +44,17 @@ function grid() {
   }
   for(var i=0;i<20;i++) {
     line(i*30,0,i*30,600);
+  }
+}
+
+function wrap(){
+  if(snakeX > 19){
+    snakeX = 0;
+  } else if(snakeX < 0){
+    snakeX = 19;
+  } else if(snakeY > 19){
+    snakeY = 0;
+  } else if(snakeY < 0){
+    snakeY = 19;
   }
 }
