@@ -63,7 +63,7 @@ function wrap(){
 }
 
 function tail(){
-  for(i = 0;i < snakeX.length;i++){
+  for(i = 0;i < (snakeX.length)-1;i++){
     snakeX[i+1] = snakeX[i];
     snakeY[i+1] = snakeY[i];
   }
