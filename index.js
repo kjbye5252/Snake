@@ -45,30 +45,30 @@ function snake(direct) {
   }
   wrap();
   for(i = 0; i < snakeX.length; i++){
-    rect((snakeX[i]*30)+1,(snakeY[i]*30)+1,28,28);
+    rect((snakeX[i]*15)+1,(snakeY[i]*15)+1,13,13);
   }
   tail();
 }
 
 function grid() {
   stroke(0,255,0);
-  for(var i=0;i<20;i++) {
-    line(0,i*30,600,i*30);
+  for(var i=0;i<40;i++) {
+    line(0,i*15,600,i*15);
   }
-  for(var i=0;i<20;i++) {
-    line(i*30,0,i*30,600);
+  for(var i=0;i<40;i++) {
+    line(i*15,0,i*15,600);
   }
 }
 
 function wrap(){
-  if(snakeX[0] > 19){
+  if(snakeX[0] > 39){
     snakeX[0] = 0;
   } else if(snakeX[0] < 0){
-    snakeX[0] = 19;
-  } else if(snakeY[0] > 19){
+    snakeX[0] = 39;
+  } else if(snakeY[0] > 39){
     snakeY[0] = 0;
   } else if(snakeY[0] < 0){
-    snakeY[0] = 19;
+    snakeY[0] = 39;
   }
 }
 
@@ -83,10 +83,10 @@ function food(){
   if(snakeX[0] == foodX && snakeY[0] == foodY){
     snakeX.push(snakeX[snakeX.length-1]);
     snakeY.push(snakeY[snakeY.length-1]);
-    foodX = Math.round(Math.random()*19);
-    foodY = Math.round(Math.random()*19);
+    foodX = Math.round(Math.random()*39);
+    foodY = Math.round(Math.random()*39);
   }
   stroke(255,0,0);
   fill(255,0,0);
-  rect((foodX*30)+1,(foodY*30)+1,28,28);
+  rect((foodX*15)+1,(foodY*15)+1,13,13);
 }
