@@ -6,7 +6,7 @@ var direction = 1;
 
 function setup() {
   createCanvas(600,600);
-  frameRate(5);
+  frameRate(10);
 }
 
 function draw() {
@@ -36,6 +36,12 @@ function snake(direct) {
     snakeY[0]--
   } else {
     snakeY[0]++
+  }
+  for(i = 0; i < snakeX.length; i++){
+    if(snakeX[0] == snakeX[i+1] && snakeY[0] == snakeY[i+1]){
+      snakeX = [0];
+      snakeY = [0];
+    }
   }
   wrap();
   for(i = 0; i < snakeX.length; i++){
