@@ -11,7 +11,7 @@ function setup() {
 
 function draw() {
   background(51);
-  grid();
+//   grid();
   food();
   snake(direction);
 }
