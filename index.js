@@ -18,6 +18,7 @@ function draw() {
 
 function snake(direct) {
   stroke(255);
+  fill(255);
   if(keyCode === RIGHT_ARROW) {
     direction = 1;
   } else if(keyCode === LEFT_ARROW){
@@ -73,10 +74,11 @@ function tail(){
 }
 
 function food(){
-  if(snakeX == foodX && snakeY == foodY){
+  if(snakeX[0] == foodX && snakeY[0] == foodY){
     foodX = Math.round(Math.random()*19);
     foodY = Math.round(Math.random()*19);
   }
   stroke(255,0,0);
+  fill(255,0,0);
   rect(foodX*30,foodY*30,29,29);
 }
