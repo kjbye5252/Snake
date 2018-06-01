@@ -25,25 +25,18 @@ function snake(direct) {
     direction = 4;        
   }
   if(direct === 1) {
-    for(i = 0; i < snakeX.length; i++){
-      snakeX[i]++
-    }
+    snakeX[i]++
   } else if(direct === 2) {
-    for(i = 0; i < snakeX.length; i++){
-      snakeX[i]--
-    }
+    snakeX[i]--
   } else if(direct === 3) {
-    for(i = 0; i < snakeX.length; i++){
-      snakeY[i]--
-    }
+    snakeY[i]--
   } else {
-    for(i = 0; i < snakeX.length; i++){
-      snakeY[i]++
-    }
+    snakeY[i]++
   }
   wrap();
+  tail();
   for(i = 0; i < snakeX.length; i++){
-      rect((snakeX[i]*30)+1,(snakeY[i]*30)+1,28,28);
+    rect((snakeX[i]*30)+1,(snakeY[i]*30)+1,28,28);
   }
 }
 
@@ -66,5 +59,12 @@ function wrap(){
     snakeY[0] = 0;
   } else if(snakeY[0] < 0){
     snakeY[0] = 19;
+  }
+}
+
+function tail(){
+  for(i = 0;i < snakeX.length;i++){
+    snakeX[i+1] = snakeX[i];
+    snakeY[i+1] = snakeY[i];
   }
 }
