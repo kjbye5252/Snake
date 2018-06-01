@@ -75,10 +75,12 @@ function tail(){
 
 function food(){
   if(snakeX[0] == foodX && snakeY[0] == foodY){
+    snakeX.pop(snakeX[snakeX.length-1]);
+    snakeY.pop(snakeY[snakeY.length-1]);
     foodX = Math.round(Math.random()*19);
     foodY = Math.round(Math.random()*19);
   }
   stroke(255,0,0);
   fill(255,0,0);
-  rect((foodX*30)+1,(foodY*30)+1,29,29);
+  rect((foodX*30)+1,(foodY*30)+1,28,28);
 }
