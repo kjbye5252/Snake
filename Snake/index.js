@@ -1,33 +1,37 @@
-var snakeX = [Math.round(Math.random()*39)];
-var snakeY = [Math.round(Math.random()*39)];
-var foodX = Math.round(Math.random()*39);
-var foodY = Math.round(Math.random()*39);
+var snakeX = [0];
+var snakeY = [0];
+var foodX;
+var foodY;
 var direction = 1;
+var frame = 0;
 
 function setup() {
-  createCanvas(600,600);
-  frameRate(10);
+  createCanvas(windowWidth,windowHeight);
+  snakeX = [Math.round(Math.random()*Math.floor(width/30)-1)];
+  snakeY = [Math.round(Math.random()*Math.floor(height/30)-1)];
+  foodX = Math.round(Math.random()*Math.floor(width/30)-1);
+  foodY = Math.round(Math.random()*Math.floor(height/30)-1);
+  frameRate(60);
 }
 
 function draw() {
-  background(51);
-//   grid();
-  food();
-  snake(direction);
+  frame++;
+  if(frame > 3){
+    frame = 0;
+  }
+  if(frame == 3){
+    createCanvas(windowWidth,windowHeight);
+    background(51);
+    // grid();
+    food();
+    snake(direction);
+  }
+
 }
 
 function snake(direct) {
   stroke(255);
   fill(255);
-  if(keyCode === RIGHT_ARROW) {
-    direction = 1;
-  } else if(keyCode === LEFT_ARROW){
-    direction = 2;        
-  } else if(keyCode === UP_ARROW){
-    direction = 3;        
-  } else if(keyCode === DOWN_ARROW){
-    direction = 4;        
-  }
   if(direct === 1) {
     snakeX[0]++
   } else if(direct === 2) {
@@ -44,30 +48,30 @@ function snake(direct) {
   }
   wrap();
   for(i = 0; i < snakeX.length; i++){
-    rect((snakeX[i]*15)+1,(snakeY[i]*15)+1,13,13);
+    rect((snakeX[i]*30)+1,(snakeY[i]*30)+1,28,28);
   }
   tail();
 }
 
 function grid() {
   stroke(0,255,0);
-  for(var i=0;i<40;i++) {
-    line(0,i*15,600,i*15);
+  for(var i=0;i<height/30;i++) {
+    line(0,i*30,Math.floor(width/30)*30,i*30);
   }
-  for(var i=0;i<40;i++) {
-    line(i*15,0,i*15,600);
+  for(var i=0;i<width/30;i++) {
+    line(i*30,0,i*30,Math.floor(height/30)*30);
   }
 }
 
 function wrap(){
-  if(snakeX[0] > 39){
+  if(snakeX[0] > Math.floor(width/30)-1){
     snakeX[0] = 0;
   } else if(snakeX[0] < 0){
-    snakeX[0] = 39;
-  } else if(snakeY[0] > 39){
+    snakeX[0] = Math.floor(width/30)-1;
+  } else if(snakeY[0] > Math.floor(height/30)-1){
     snakeY[0] = 0;
   } else if(snakeY[0] < 0){
-    snakeY[0] = 39;
+    snakeY[0] = Math.floor(height/30)-1;
   }
 }
 
@@ -80,18 +84,31 @@ function tail(){
 
 function food(){
   if(snakeX[0] == foodX && snakeY[0] == foodY){
-    snakeX.push(snakeX[snakeX.length-1]);
-    snakeY.push(snakeY[snakeY.length-1]);
-    foodX = Math.round(Math.random()*39);
-    foodY = Math.round(Math.random()*39);
+    for(i = 0; i < 5;i++){
+      snakeX.push(snakeX[snakeX.length-1]);
+      snakeY.push(snakeY[snakeY.length-1]);
+    }
+    foodX = Math.round(Math.random()*Math.floor(width/30)-1);
+    foodY = Math.round(Math.random()*Math.floor(height/30)-1);
   }
   stroke(255,0,0);
   fill(255,0,0);
-  rect((foodX*15)+1,(foodY*15)+1,13,13);
+  rect((foodX*30)+1,(foodY*30)+1,28,28);
 }
 
 function reset(){
-  text("GAME OVER!",300,300);
   snakeX = [Math.round(Math.random()*39)];
   snakeY = [Math.round(Math.random()*39)];
+}
+
+function keyPressed(){
+  if(keyCode === RIGHT_ARROW) {
+    direction = 1;
+  } else if(keyCode === LEFT_ARROW){
+    direction = 2;
+  } else if(keyCode === UP_ARROW){
+    direction = 3;
+  } else if(keyCode === DOWN_ARROW){
+    direction = 4;
+  }
 }
