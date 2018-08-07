@@ -30,8 +30,8 @@ function draw() {
 }
 
 function snake(direct) {
-  stroke(0,255,0);
-  fill(0,255,0);
+  stroke(0,254,0);
+  fill(0,254,0);
   if(direct === 1) {
     snakeX[0]++
   } else if(direct === 2) {
